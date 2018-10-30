@@ -1,0 +1,22 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<!--<suite name="Google Search Suite"  parallel="false" thread-count="2">-->
+<suite name="Test Suite">
+
+    <!--<test name="Firefox tests"  >-->
+        <!--<parameter name = "browser" value="FIREFOX"/>-->
+        <!--<classes>-->
+            <!--<class name="com.factory.pattern.tests.LoginTest" />-->
+            <!--<class name="com.factory.pattern.tests.SecureTest" />-->
+        <!--</classes>-->
+    <!--</test>-->
+
+    <test name="Chrome tests" >
+        <parameter name = "browser" value="CHROME"/>
+        <classes>
+            <class name="com.factory.pattern.tests.LoginTest" />
+            <class name="com.factory.pattern.tests.SecureTest" />
+        </classes>
+    </test>
+</suite>
