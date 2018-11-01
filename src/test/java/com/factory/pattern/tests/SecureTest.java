@@ -1,8 +1,5 @@
 package com.factory.pattern.tests;
 
-import com.factory.pattern.drivers.DriverManager;
-import com.factory.pattern.drivers.DriverManagerFactory;
-import com.factory.pattern.drivers.DriverType;
 import com.factory.pattern.pages.LoginPage;
 import com.factory.pattern.pages.SecurePage;
 import io.qameta.allure.Description;
@@ -14,27 +11,15 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class SecureTest extends BaseTest {
 
-    private static DriverManager driverManager;
     private static WebDriver driver;
     private LoginPage lp;
     private SecurePage sp;
 
-    @BeforeTest
-    @Parameters("browser")
-    public void beforeTest(DriverType browser) {
-        driverManager = DriverManagerFactory.getManager(browser);
-    }
-
     @BeforeMethod
     public void beforeMethod() {
-        driver = driverManager.getDriver();
+        driver = getDriver();
         lp = new LoginPage(driver, "tomsmith", "SuperSecretPassword!");
         sp = new SecurePage(driver);
-    }
-
-    @AfterMethod
-    public void tearDown() {
-        driverManager.quitDriver();
     }
 
     @Test
