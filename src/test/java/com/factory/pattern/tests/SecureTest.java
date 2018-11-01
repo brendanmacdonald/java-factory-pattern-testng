@@ -1,7 +1,5 @@
 package com.factory.pattern.tests;
 
-import com.factory.pattern.Utils.Configuration;
-import com.factory.pattern.Utils.ConfigurationHelper;
 import com.factory.pattern.drivers.DriverManager;
 import com.factory.pattern.drivers.DriverManagerFactory;
 import com.factory.pattern.drivers.DriverType;
@@ -14,7 +12,7 @@ import org.testng.annotations.*;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class SecureTest {
+public class SecureTest extends BaseTest {
 
     private static DriverManager driverManager;
     private static WebDriver driver;
